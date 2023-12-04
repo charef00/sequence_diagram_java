@@ -143,3 +143,53 @@ En suivant cette approche en trois tiers, nous organiserons le flux de données 
 
 ![sequence](https://github.com/charef00/sequence_diagram_java/assets/46047976/e8afc2de-fd2b-4dca-97d7-9fda2bfe7cfc)
 
+Au commencement du diagramme de séquence, un acteur, représenté par un employé, initie l'interaction. Un message nommé "effectuerVirementPersonnel" est échangé entre l'employé et l'objet de classe Controller. Ce message incarne une méthode de la classe Controller, indiquant ainsi l'action d'effectuer un virement personnel.
+
+Le second message, "chercherClient", est un message réflexif qui débute à partir de la période d'activité de la méthode "effectuerVirementPersonnel". En termes d'exécution, cela signifie que le message "chercherClient" est une méthode de la classe Controller, et son exécution se déroule au sein de la classe elle-même. Un message réflexif se traduit simplement par l'appel d'une méthode à l'intérieur de la même classe.
+
+Après avoir identifié le client grâce à la méthode "chercherClient", la recherche des deux comptes du même client s'impose. Comme rappelé précédemment, la méthode "chercherCompte" est une méthode de la classe Client. Par conséquent, un message est échangé entre la période active de la méthode "effectuerVirementPersonnel" et l'objet client que nous avons déjà trouvé avec la méthode "chercherClient".
+Alors, la classe Controller va être comme suit :
+```java
+package grp2;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Controller 
+{
+	List<Client>clients=new ArrayList<Client>();
+	
+	public Controller()
+	{
+		Client client=new Client(23, "ahmed");
+		Compte c1=new Compte("cl1-ab", 2000);
+		Compte c2=new Compte("cl1-bc", 1000);
+		client.ajouterCompte(c1);
+		client.ajouterCompte(c2);
+		this.clients.add(client);
+	}
+	
+	
+	public boolean effectuerVirementP(int id,String nc1,String nc2, double mnt)
+	{
+		Client client=chercherClient(id);
+		Compte c1=client.chercherCompte(nc1);
+		Compte c2=client.chercherCompte(nc2);
+		Virement v1=new Virement(mnt, c1, c2);
+		boolean rtn=v1.effectuer();
+		return rtn;
+	}
+	
+	public Client chercherClient(int id)
+	{
+		for (Client client : clients) {
+			if(client.getId()==id)
+			{
+				return client;
+			}
+		}
+		
+		return null;
+	}
+}
+```
