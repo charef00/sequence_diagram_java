@@ -18,6 +18,9 @@ Classe Virement :
 
 Attributs : Montant
 Description : Représente une transaction de virement entre deux comptes. Le virement implique un retrait du compte source et un dépôt dans le deuxième compte.
+# Diagramme de cas d'utlisation
+
+![use cas](https://github.com/charef00/sequence_diagram_java/assets/46047976/79c8d017-bd3c-468d-9aa8-d0247f90b259)
 
 # Diagramme de classes
 
@@ -128,9 +131,6 @@ public class Virement
 	}
 }
 ```
-# Diagramme de cas d'utlisation
-
-![use cas](https://github.com/charef00/sequence_diagram_java/assets/46047976/79c8d017-bd3c-468d-9aa8-d0247f90b259)
 
 # Diagramme de séquence
 Le diagramme de séquence que nous élaborerons se concentrera sur un exemple concret illustrant l'utilisation d'un cas d'utilisation spécifique : l'exécution d'un virement personnel. Pour ce faire, nous aborderons également la boîte blanche, qui nous permet de représenter les interactions entre les objets internes de l'application.
