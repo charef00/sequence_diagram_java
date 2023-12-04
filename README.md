@@ -133,6 +133,13 @@ public class Virement
 ![use cas](https://github.com/charef00/sequence_diagram_java/assets/46047976/79c8d017-bd3c-468d-9aa8-d0247f90b259)
 
 # Diagramme de séquence
+Le diagramme de séquence que nous élaborerons se concentrera sur un exemple concret illustrant l'utilisation d'un cas d'utilisation spécifique : l'exécution d'un virement personnel. Pour ce faire, nous aborderons également la boîte blanche, qui nous permet de représenter les interactions entre les objets internes de l'application.
+
+La création de ce diagramme de séquence nécessitera préalablement la disponibilité du diagramme de cas d'utilisation ainsi que du diagramme de classes. Dans un souci de bonnes pratiques de développement Java, nous adopterons l'architecture 3 tiers.
+
+Dans cette structure, la classe Main "Console" représentera la vue (view). Nous introduirons une nouvelle classe, le contrôleur (Controller), qui sera responsable de la logique de traitement. Enfin, le modèle sera représenté par les trois classes : Client, Compte, et Virement, conformément à notre diagramme de classes.
+
+En suivant cette approche en trois tiers, nous organiserons le flux de données de manière claire et modulaire, favorisant une conception robuste et évolutive de l'application.
 
 ![sequence](https://github.com/charef00/sequence_diagram_java/assets/46047976/e8afc2de-fd2b-4dca-97d7-9fda2bfe7cfc)
 
