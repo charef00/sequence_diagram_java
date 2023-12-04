@@ -150,11 +150,6 @@ Le second message, "chercherClient", est un message réflexif qui débute à par
 Après avoir identifié le client grâce à la méthode "chercherClient", la recherche des deux comptes du même client s'impose. Comme rappelé précédemment, la méthode "chercherCompte" est une méthode de la classe Client. Par conséquent, un message est échangé entre la période active de la méthode "effectuerVirementPersonnel" et l'objet client que nous avons déjà trouvé avec la méthode "chercherClient".
 Alors, la classe Controller va être comme suit :
 ```java
-package grp2;
-
-import java.util.ArrayList;
-import java.util.List;
-
 public class Controller 
 {
 	List<Client>clients=new ArrayList<Client>();
