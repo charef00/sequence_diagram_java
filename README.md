@@ -23,6 +23,42 @@ Description : Représente une transaction de virement entre deux comptes. Le vir
 
 ![class](https://github.com/charef00/sequence_diagram_java/assets/46047976/68500522-74f1-41da-95ed-fda00c297893)
 
+# Java
+
+Classe Client :
+Attributs : Identifiant (ID), Nom
+Associations : Un client peut avoir 0 à plusieurs comptes (relation '0.*' avec la classe Compte). Cela entraîne l'ajout d'un attribut supplémentaire, comptes, de type tableau (array) de Compte.
+Opération : chercherCompte - Cette opération permet de rechercher un compte dans la liste des comptes associés à un client.
+
+```java
+public class Client 
+{
+	private int id;
+	private String nom;
+	List<Compte> comptes=new ArrayList<Compte>();
+	public Client(int id, String nom)
+  {
+		this.id = id;
+		this.nom = nom;
+	}
+	public void ajouterCompte(Compte c)
+	{
+		this.comptes.add(c);
+	}
+	public Compte chercherCompte(String nco)
+	{
+		for (Compte compte : comptes) {
+			if(compte.getNcom()==nco)
+			{
+				return compte;
+			}
+		}
+		return null;
+	}
+}
+```
+
+
 # Diagramme de cas d'utlisation
 
 ![use cas](https://github.com/charef00/sequence_diagram_java/assets/46047976/79c8d017-bd3c-468d-9aa8-d0247f90b259)
